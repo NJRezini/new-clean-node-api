@@ -4,6 +4,11 @@
     "module": "commonjs",
     "target": "es2019",
     "esModuleInterop": true,
-    "allowJs": true
-  }
+    "allowJs": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "sourceMap": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
 }
