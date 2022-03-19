@@ -11,18 +11,20 @@ module.exports = {
     },
   },
   rules: {
-    'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
-    'import/no-extraneous-dependencies': [2, { devDependencies: ['**/test.tsx', '**/test.ts'] }],
+    'linebreak-style': 0,
+    'import/prefer-default-export': 0,
+    'class-methods-use-this': 0,
+    'consistent-return': 0,
+    'import/no-extraneous-dependencies': [2, { devDependencies: ['**/test.ts'] }],
     '@typescript-eslint/indent': [2, 2],
     'import/extensions': [
       'error',
       'ignorePackages',
       {
         js: 'never',
-        jsx: 'never',
         ts: 'never',
-        tsx: 'never',
       },
     ],
+    'no-restricted-syntax': 0,
   },
 };

@@ -1,14 +1,15 @@
 import { MissingParamError } from '../errors/missing-param-error';
-import { HttpResponse, HttpRequest} from '../protocols/http'
-import { badReqeust } from '../helpers/http-helper'
+import { badReqeust } from '../helpers/http-helper';
+import { HttpRequest, HttpResponse } from '../protocols/http';
 
 export class SignUpController {
+  // eslint-disable-next-line no-restricted-syntax
   handle(httpRequest: HttpRequest): HttpResponse {
-    if (!httpRequest.body.name){
-      return badReqeust(new MissingParamError('name'))
-    }
-    if (!httpRequest.body.email){      
-        return badReqeust(new MissingParamError('email'))
+    const requiredFields = ['name', 'email'];
+    for (const field of requiredFields) {
+      if (!httpRequest.body[field]) {
+        return badReqeust(new MissingParamError(field));
+      }
     }
   }
 }
