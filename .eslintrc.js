@@ -26,5 +26,6 @@ module.exports = {
       },
     ],
     'no-restricted-syntax': 0,
+    'max-classes-per-file': 0,
   },
 };
